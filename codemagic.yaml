@@ -1,63 +1,30 @@
 workflows:
-  ios-workflow:
-    name: SiteNative iOS without OneSignal
+  android-workflow:
+    name: SiteNative Android apk
     max_build_duration: 30
     environment:
       vars:
-        XCODE_WORKSPACE: "Runner.xcworkspace"
-        XCODE_SCHEME: "Runner"
-        APP_STORE_CONNECT_ISSUER_ID: 2924d2ab-3e2f-4579-8c9b-5c7f11e74bcf
-        APP_STORE_CONNECT_KEY_IDENTIFIER: 68DDVU9JJD
-        APP_STORE_CONNECT_PRIVATE_KEY: |-
-         -----BEGIN PRIVATE KEY-----
-         MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg0LzBaN1PzUsPO45h
-         Ye5a3hgVItjasRFQFpVygkq2O5WgCgYIKoZIzj0DAQehRANCAATE1OU4se9rEjzS
-         m5FElEL37pap0DikzTpRwq9le7/3N45gq0N5a3gk+r97+57Z/wDtGeGw2MAum524
-         r8r0VNZc
-         -----END PRIVATE KEY-----
-
-        CERTIFICATE_PRIVATE_KEY: |-
-         -----BEGIN OPENSSH PRIVATE KEY-----
-         b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-         QyNTUxOQAAACC+fAxX0pPn6R6lQU5b5ZS2LoBFfmniw6wsY1bsKxn6VgAAAKA/nkpMP55K
-         TAAAAAtzc2gtZWQyNTUxOQAAACC+fAxX0pPn6R6lQU5b5ZS2LoBFfmniw6wsY1bsKxn6Vg
-         AAAEByc4tBqB4YbC4RhkpSsLFsJuRQ8AcGwLNfPY668jOLH758DFfSk+fpHqVBTlvllLYu
-         gEV+aeLDrCxjVuwrGfpWAAAAGlNvZnRtaW50QE1hY0Jvb2stQWlyLmxvY2FsAQID
-         -----END OPENSSH PRIVATE KEY-----
-         
-
-        BUNDLE_ID: "lk.appsl.shopping"
+        PACKAGE_NAME: "lk.appsl.shopping"
       flutter: stable
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+      - name: Set up local.properties
         script: |
-          keychain initialize
-      - name: Fetch signing files
-        script: |
-          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create --log-api-calls --verbose
-      - name: Use system default keychain
-        script: |
-          keychain add-certificates
-      - name: Set up code signing settings on Xcode project
-        script: |
-          xcode-project use-profiles
+          echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
       - name: Get Flutter packages
         script: |
           cd . && flutter packages pub get
       - name: Install pods
         script: |
           find . -name "Podfile" -execdir pod install \;
-      - name: Flutter build ipa and automatic versioning
+      - name: Build APK with Flutter
         script: |
-          flutter build ipa --release \
-          --build-name=1.0.0 \
-          --build-number=$(($(app-store-connect get-latest-testflight-build-number "$APP_STORE_ID") + 1)) \
-          --export-options-plist=/Users/builder/export_options.plist
+          cd . && flutter build apk --release --build-name=1.0.0 --build-number=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))
     artifacts:
-      - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
       - flutter_drive.log
     publishing:
       scripts:
