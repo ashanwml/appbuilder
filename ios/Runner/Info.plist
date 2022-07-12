@@ -60,7 +60,11 @@
     <true/>
     <key>UIFileSharingEnabled</key>
     <true/>
-    
+    <key>NSLocationWhenInUseUsageDescription</key>
+<string>Access to the location will allow you to track and show your location</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>Access to the location will allow you to track and show your geo location</string>
+
     
     
     <key>LSApplicationQueriesSchemes</key>
@@ -72,7 +76,7 @@
 	<true/>
 	<key>CFBundleLocalizations</key>
     <array>
-      <string>si</string>
+      <string>en</string>
     </array>
 </dict>
 </plist>
