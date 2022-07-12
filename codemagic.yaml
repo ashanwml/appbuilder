@@ -7,23 +7,43 @@ workflows:
         XCODE_WORKSPACE: "Runner.xcworkspace"
         XCODE_SCHEME: "Runner"
         APP_STORE_CONNECT_ISSUER_ID: 2924d2ab-3e2f-4579-8c9b-5c7f11e74bcf
-        APP_STORE_CONNECT_KEY_IDENTIFIER: 68DDVU9JJD
+        APP_STORE_CONNECT_KEY_IDENTIFIER: A9RBML535A
         APP_STORE_CONNECT_PRIVATE_KEY: |-
          -----BEGIN PRIVATE KEY-----
-         MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg0LzBaN1PzUsPO45h
-         Ye5a3hgVItjasRFQFpVygkq2O5WgCgYIKoZIzj0DAQehRANCAATE1OU4se9rEjzS
-         m5FElEL37pap0DikzTpRwq9le7/3N45gq0N5a3gk+r97+57Z/wDtGeGw2MAum524
-         r8r0VNZc
+         MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgVHJ03B+z/zlY+Wh2
+         axgggwljVJcqCb6CzqmKH4Hh4EmgCgYIKoZIzj0DAQehRANCAASjWAchKNk3cRAM
+         VGbUwnYOooKAuShmi1w19XcxVN9cDBkP5oiom8uDPhyAd1G+NLMZP7PMYR6aSo9L
+         VBAOUXfH
          -----END PRIVATE KEY-----
 
         CERTIFICATE_PRIVATE_KEY: |-
-         -----BEGIN OPENSSH PRIVATE KEY-----
-         b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-         QyNTUxOQAAACC+fAxX0pPn6R6lQU5b5ZS2LoBFfmniw6wsY1bsKxn6VgAAAKA/nkpMP55K
-         TAAAAAtzc2gtZWQyNTUxOQAAACC+fAxX0pPn6R6lQU5b5ZS2LoBFfmniw6wsY1bsKxn6Vg
-         AAAEByc4tBqB4YbC4RhkpSsLFsJuRQ8AcGwLNfPY668jOLH758DFfSk+fpHqVBTlvllLYu
-         gEV+aeLDrCxjVuwrGfpWAAAAGlNvZnRtaW50QE1hY0Jvb2stQWlyLmxvY2FsAQID
-         -----END OPENSSH PRIVATE KEY-----
+         -----BEGIN RSA PRIVATE KEY-----
+         MIIEowIBAAKCAQEA4DdGvKdL05jw8qc2xe01l516J+/KRJKZcmvxXc4bTPaWMhno
+         iZyDAwMt71OZbNeWIPQZD4qGwON7ZZ2+AbPR20WW6vHlO018QQ1Kr2wj+Si4Z1hM
+         9f0SscqgeDdhDmQg3DERxWBt2xxSBW3zoAlIjnrVH0YdV8VauzIlFQm5NlWRSCLb
+         B8/hqGpcLtGmyWM0E7LSQgjnMeUi1RqV0pUIHANNGX9SZa4dqfZ9Uoumg3KKecpz
+         E7IhB/u6DQTC9PrHiignC95tZU59Y96i7coCuw6ad2fNsc4q72a7nHNw9miBdejw
+         NT7lqdOGSjLlQziezlJ4mG0YapE0JyGc6ma9XQIDAQABAoIBAGSorDsZqDMQoGtv
+         omltOvgcHLE9N8NdRUJXL377fsookflgJENTXoXFsaOWFnUEvEODEpUljaWe+tD9
+         5kWBYx9buIs1mcHr4XKa8wKaO/Qp0c+jlrmAqhnja/NMeWgqj44LAX1o8yjBKBmD
+         6THZuRcuEev+YEH9OeR8eKVfPiUjofrJ79JvPSVjMZEoZeeLWbCEda1fZBztYp6l
+         0pADtrvavmg6hLwmja8ZSEsL5z+G3zWprquiPJHYraGotwvlsiDLY4AxUlZ/eJMq
+         4iDGxOUkMbMHIjvOcpBQVANQD+6HrE16xrE1WmTKpnSSH/LoK24pdv41QWsLYCiN
+         qA2ap8kCgYEA8fndDgsNtCqai2eVEa5l+XC03uEnsh35CMYYCnsNPmHgtNhpSXLI
+         WTtfEtducTVZQoxQiUuD2IDw+KmaChZ66QdcrGDOHYypWWM6xBPpCL2ZJwN86sgu
+         +u6gtDPapf+9MdSx0z/mMW9dal93T87zgpuaOFI6jfOy6YQHHWBO8Z8CgYEA7TXp
+         IUvpJPEP2Kz6ODbfoo/vgWE37PqSbvrWVTS07BCcJSHFnLhl/HyXdL7FabCcMHuJ
+         thY0BjDJgK9bH7WUwFTo/YRfPhSYsFxsNTPWzJtI8mghEKd0Jjds4D1sBjHSY3mv
+         ozJ2NCqMAdsH+UwswwuKSFEWwNNM8Kb8Wk5CR4MCgYAhY3vYGzhZ2uMWR0WveeQC
+         RkX+1wyWLEKXrlXU5GPQbssFyTLF+rugbGvS+rz3jAf0Ac5/E1dvAWO+vBBQQgfV
+         rblg476tHyKi/ek28xRdq2O9mWKcNuEcqN6t3tXVv/MINDQRVSjbO2WlbuTUs1aw
+         d+4QxW/k9HKEfD5LFGXwOwKBgEfWBrbtrTphwoHEyLYTcCBj5I1S6sPaklQHpLcD
+         EjNXSGI6WwT+Fuyisp9JUrGSKYrJLsg06yZgyfUtpbPxoo2oaTK1Tr6XMDJgmuh1
+         vXwTHsFCZZkMjTExocg68abimatEY7tRgdiEdgft0/lcZ0XeDc+etvxIQUmz2EJk
+         5s+PAoGBALZLHFOEbrB9Y3AXa34AUnUQbFk6RBOk2Jj6TB5ZwZu3/VO+5JIEXM5Q
+         j5Ko5QeWqF4+A7FuR6WpaHwc6i0j584TEtjxF1EYV1WqAazKLHzGbUzbMTIJb9Uz
+         3T5EFF1opWV6ZHECC+ACvnxXdNJWeAwwPIiyLWxJUo3hBHJjTFuM
+         -----END RSA PRIVATE KEY-----
          
 
         BUNDLE_ID: "lk.appsl.shopping"
